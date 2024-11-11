@@ -1,7 +1,7 @@
 ## Settings
 
 # Filename of the dotenv file to look for
-: ${ZSH_VENV_DIR:=".venv/bin/activate"}
+: ${ZSH_VENV_FILE:=".venv/bin/activate"}
 
 # Path to the file containing allowed paths
 : ${ZSH_VENV_ALLOWED_LIST:="${ZSH_CACHE_DIR:-$ZSH/cache}/venv-allowed.list"}
@@ -37,7 +37,7 @@ source_venv() {
       [[ $column -eq 1 ]] || echo
 
       # print same-line prompt and output newline character if necessary
-      echo -n "dotenv: found '$ZSH_VENV_FILE' file. Source it? ([Y]es/[n]o/[a]lways/n[e]ver) "
+      echo -n "venv: found '$ZSH_VENV_FILE' file. Source it? ([Y]es/[n]o/[a]lways/n[e]ver) "
       read -k 1 confirmation
       [[ "$confirmation" = $'\n' ]] || echo
 
